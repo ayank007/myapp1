@@ -30,6 +30,8 @@ class Register extends React.Component{
 
 	onSubmit=()=>{
 		fetch('https://ayank007myapp1.herokuapp.com/register',{
+			mode: 'cors',
+			credentials: 'include',
 			method: 'post',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({
@@ -38,13 +40,20 @@ class Register extends React.Component{
 				password:this.state.rpassword
 			})
 		})
-			.then(response=>response.json())
-				.then(data=>{
-					if(data!=='sorry buddy'){
-						this.props.onRouteChange('home')
-					}
-				})
+		.then(response=>response.json())
+		.then(data=>{
+			if(data!=='sorry buddy'){
+				this.props.onRouteChange('home')
+			}
+			else{
+				console.log('sorry buddy')
+			}
+		})
+		.catch(err=>{
+			console.log('error registering')
+		})
 	}
+
 
 	render(){
 		return(

@@ -24,6 +24,8 @@ class SignIn extends React.PureComponent{
 	onSubmit=()=>{
 		// const {semail,spassword}=this.state;
 		fetch('https://ayank007myapp1.herokuapp.com/signin',{
+			mode: 'cors',
+			credentials: 'include',
 			method: 'post',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({
@@ -32,15 +34,18 @@ class SignIn extends React.PureComponent{
 			})
 		})
 		.then(response=>response.json())
-			.then(data=>{
-				if (data!=='who the fuck are you' && data!=='wrong password buddy' && data!=='jani na kiser error'){
-					this.props.onRouteChange('home')
-					console.log('welcome')
-				}
-				else{
-					console.log('sorry buddy')
-				}
-			})
+		.then(data=>{
+			if (data!=='who the fuck are you' && data!=='wrong password buddy' && data!=='jani na kiser error'){
+				this.props.onRouteChange('home')
+				console.log('welcome')
+			}
+			else{
+				console.log('sorry buddy')
+			}
+		})
+		.catch(err=>{
+			console.log('error signing')
+		})
 
 	}
 
