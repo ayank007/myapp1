@@ -24,8 +24,6 @@ class SignIn extends React.PureComponent{
 	onSubmit=()=>{
 		// const {semail,spassword}=this.state;
 		fetch('https://ayank007myapp1.herokuapp.com/signin',{
-			mode: 'cors',
-			credentials: 'include',
 			method: 'post',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({

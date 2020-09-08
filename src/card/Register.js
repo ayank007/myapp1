@@ -30,8 +30,6 @@ class Register extends React.Component{
 
 	onSubmit=()=>{
 		fetch('https://ayank007myapp1.herokuapp.com/register',{
-			mode: 'cors',
-			credentials: 'include',
 			method: 'post',
 			headers: {'Content-Type':'application/json'},
 			body: JSON.stringify({
