@@ -33,12 +33,18 @@ class SignIn extends React.PureComponent{
 		})
 		.then(response=>response.json())
 		.then(data=>{
-			if (data!=='who the fuck are you' && data!=='wrong password buddy' && data!=='jani na kiser error'){
-				this.props.onRouteChange('home')
-				console.log('welcome')
+			if (data==='who the fuck are you'){
+				console.log('who the fuck are you')
+			}
+			else if (data==='wrong password buddy'){
+				console.log('wrong password buddy')
+			}
+			else if (data==='jani na kiser error'){
+				console.log('jani na kiser error')
 			}
 			else{
-				console.log('sorry buddy')
+				this.props.onRouteChange('home')
+				console.log('welcome')
 			}
 		})
 		.catch(err=>{

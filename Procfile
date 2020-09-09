@@ -1,0 +1,1 @@
+web: create-react-app app.js
