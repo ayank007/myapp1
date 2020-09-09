@@ -1,5 +1,5 @@
 import React from 'react';
-import {logo} from '../logo.svg';
+// import {logo} from '../logo.svg';
 
 class Register extends React.Component{
 	
@@ -86,7 +86,7 @@ class Register extends React.Component{
 				
 				<div className="p1 flex items-center justify-center flex-column">
 					<h1>Type a Password</h1>
-					<input type="password" className="password" placeholder={{logo}}/>
+					<input type="password" className="password"/>
 				</div>
 				
 				<button>Genarate Password</button>
