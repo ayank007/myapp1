@@ -1,1 +1,1 @@
-web: create-react-app app.js
+web: create-react-app App.js
